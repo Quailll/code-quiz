@@ -35,7 +35,12 @@ function startGame (){
 }
 
 function countDown(){
-  time
+  timer--;
+  timerCount.textContent = timer;
+  if (time <= 0){
+    quizEnd()
+  }
+
 }
 
 /*startBtn.addEventListener('click', function(){ 
