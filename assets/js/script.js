@@ -1,34 +1,49 @@
-var quesions = [
-  {
-    title: "Commonly used data types DO NOT include:",
-    choices: ["strings", "booleans", "alerts", "numbers"],
-    answer: "alerts",
+var startBtn = document.getElementById('start');
+var resetBtn = document.getElementById('reset');
+var timerCount = document.getElementById('time');
+var submitLs = document.getElementById('submit');
+var choicePicked = document.getElementById('choices');
+var currentQuestion = 0
+var answers = true
+var timer;
+
+var questions = [{
+    
+    title: "For gitbash or terminal what how do you navigate between directories? ",
+    choices: ["mkdir","cd","mv","ls"],
+    answer: "cd",
   },
   {
-    title: "The condition in an if / else statement is enclosed within ____.",
-    choices: ["quotes", "curly brackets", "parentheses", "square brackets"],
-    answer: "parentheses",
-  },
-  {
-    title: "Arrays in JavaScript can be used to store ____.",
-    choices: [
-      "numbers and strings",
-      "other arrays",
-      "booleans",
-      "all of the above",
-    ],
+    title: "What are in the box element?",
+    choices: ["padding","margin","border","all of the above"],
     answer: "all of the above",
   },
   {
-    title:
-      "String values must be enclosed within ____ when being assigned to variables.",
-    choices: ["commas", "curly brackets", "quotes", "parentheses"],
-    answer: "quotes",
-  },
-  {
-    title:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
-    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-    answer: "console.log",
-  },
-];
+    title: "Which one is a commonly used data type that is used?",
+    choices: ["strings","tag","flex","href"],
+    answer: "strings",
+  }
+
+]
+
+function startGame (){
+  var gameStart = document.getElementById('beginning');
+  gameStart.setAttribute('class','hide')
+  choicePicked.removeAttribute('class');
+  timer = setInterval(clockTick, 1000);
+  
+}
+
+function countDown(){
+  time
+}
+
+/*startBtn.addEventListener('click', function(){ 
+  })
+resetBtn.addEventListener('click', function(){
+  console.log('reset button was clicked')
+});
+submitLs.addEventListener('click', function(){
+  console.log('submit was just clicked')
+});*/
+

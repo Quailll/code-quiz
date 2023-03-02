@@ -1,4 +1,4 @@
-body header {
+h1 {
   text-align: center;
 }
 
@@ -6,9 +6,16 @@ body header {
   display:none;
 }
 
-timer {
+
+.highscore {
+  display: flex;
+}
+
+.timer {
   display: flex;
   justify-content: right;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
 #btn {
@@ -27,4 +34,5 @@ button {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  font-size: 20px;
 }

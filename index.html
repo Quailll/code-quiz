@@ -8,31 +8,36 @@
   <title>Code Quiz</title>
 </head>
 <body>
-  <header>
-    <h1>Code Quiz</h1>
-  </header>
-
-  <main>
-    <section id="questions" class="hide">
-      <h2 id="titles"></h2>
-      <section id="choice" class="choice"></section>
-    </section>
-
-    <section id="highscore" class="highscore"></section>
-    
+  <h1>Code Quiz</h1>
+  <section id="btn">
+    <article id="beginning" class="begin"></article>
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+  </section> 
+  
     <section class="timer">Time: <span id="time">0</span></section>
+
     <section id="questions" class="hide">
       <h2 id="question-title"></h2>
       <section id="choices" class="choices"></section>
     </section>
-    <section id="btn">
-      <button>Start</button>
-      <button>Reset</button>
-    </section> 
-  </main>
-  
 
-  <script src="./assets/js/questions.js"></script>
-  <script src="./assets/js/logic.js"></script>
+    <section id="highscore" class="hide">
+      <h2>Highscore</h2>
+      <ol id="highscorelist"></ol>
+      <button>Go back</button>
+      <button>Clear</button>
+    </section>
+
+    <section id="submission" class="hide"></section>
+      <h2>Congrats!</h2>
+        <p>Your score is <span id="playerscore"></span></p>
+        <p>
+          Enter name: <input type="text" id="playername"/> 
+          <button id="submit" type="button">Submit</button>
+        </p>
+
+
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
