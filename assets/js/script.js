@@ -13,24 +13,24 @@ var time = questions.length * 15;
 var timerset;
 
 
-var questions = [{
+// var questions = [{
     
-    title: "For gitbash or terminal what how do you navigate between directories? ",
-    choices: ["mkdir","cd","mv","ls"],
-    answer: "cd",
-  },
-  {
-    title: "What are in the box element?",
-    choices: ["padding","margin","border","all of the above"],
-    answer: "all of the above",
-  },
-  {
-    title: "Which one is a commonly used data type that is used?",
-    choices: ["strings","tag","flex","href"],
-    answer: "strings",
-  }
+//     title: "For gitbash or terminal what how do you navigate between directories? ",
+//     choices: ["mkdir","cd","mv","ls"],
+//     answer: "cd",
+//   },
+//   {
+//     title: "What are in the box element?",
+//     choices: ["padding","margin","border","all of the above"],
+//     answer: "all of the above",
+//   },
+//   {
+//     title: "Which one is a commonly used data type that is used?",
+//     choices: ["strings","tag","flex","href"],
+//     answer: "strings",
+//   }
 
-]
+// ]
 
 function startGame () {
    
@@ -49,10 +49,27 @@ function timeStart (){
   }
 }
 
+
+function questionList(){
+  var grabQuestions = questionsEl[questions]
+  for (let i = 0; i < grabQuestions.length; i++) {
+    if (grabQuestions = )
+  }
+
+}
+
+
 function quizEnds(){
   questionsEl.setAttribute('class', 'hide')
   highScoreEl.removeAttribute('class')
 }
+
+
+
+
+
+
+
 
 startBtn.onclick = startGame
 
