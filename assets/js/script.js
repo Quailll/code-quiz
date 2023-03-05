@@ -1,11 +1,17 @@
 var startBtn = document.getElementById('start');
 var resetBtn = document.getElementById('reset');
-var timerCount = document.getElementById('time');
-var submitLs = document.getElementById('submit');
-var choicePicked = document.getElementById('choices');
-var currentQuestion = 0
-var answers = true
-var timer;
+var timeCounter = document.getElementById('time');
+var questionsEl = document.getElementById('questions');
+var choicesEl = document.getElementById('choices');
+var highScoreEl = document.getElementById('highscore');
+var submits = document.getElementById('submit');
+var playerNameEl = document.getElementById('playername');
+var submissionEl = document.getElementById('submission');
+var starter = document.getElementById('btn')
+var currentQuestion = 0;
+var time = questions.length * 15;
+var timerset;
+
 
 var questions = [{
     
@@ -26,29 +32,28 @@ var questions = [{
 
 ]
 
-function startGame (){
-  var gameStart = document.getElementById('beginning');
-  gameStart.setAttribute('class','hide')
-  choicePicked.removeAttribute('class');
-  timer = setInterval(clockTick, 1000);
+function startGame () {
+   
+    starter.setAttribute('class','hide');
+    questionsEl.remove('class');
+    timerset = setInterval(timeStart, 1000);
+    timeCounter.textContent = time;
   
 }
 
-function countDown(){
-  timer--;
-  timerCount.textContent = timer;
+function timeStart (){
+  time--;
+  timeCounter.textContent = time;
   if (time <= 0){
-    quizEnd()
+    quizEnds()
   }
-
 }
 
-/*startBtn.addEventListener('click', function(){ 
-  })
-resetBtn.addEventListener('click', function(){
-  console.log('reset button was clicked')
-});
-submitLs.addEventListener('click', function(){
-  console.log('submit was just clicked')
-});*/
+function quizEnds(){
+  questionsEl.setAttribute('class', 'hide')
+  highScoreEl.removeAttribute('class')
+}
+
+startBtn.onclick = startGame
+
 
