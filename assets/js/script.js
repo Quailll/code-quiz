@@ -46,21 +46,61 @@ function timeStart (){
   time--;
   timeCounter.textContent = time;
   if (time <= 0){
-    quizEnds()
+    clearInterval(timerset);
+    quizEnds();
   }
 }
 
-function questionList() {
+function questionList(event) {
+  // var questionBtn = event.target
   var grabbedQuestion = questions[currentQuestion]
   questionTitleEl.textContent = grabbedQuestion.title
+  choicesEl.innerHTML = "";
   for (let i = 0; i < grabbedQuestion.choices.length; i++) {
     var createButton = document.createElement('button')
     createButton.textContent = grabbedQuestion.choices[i]
-    document.body.appendChild(createButton);
-    //do some code here
-    console.log(grabbedQuestion.choices[i]);
-  }
+    
+    // document.addEventListener('click', function(){
+    //   event.preventDefault();
+    //   if (grabbedQuestion.choices[i]=== grabbedQuestion.answer){
+    //     grabbedQuestion[i]!== grabbedQuestion.answer
+    //     // time -= 15;
+    //   }else {
+    //     time -= 15;
+    //   }
+    //   currentQuestion++;
+    //   if (currentQuestion>=questions.length){
+    //   //   quizEnds();
+    //   // }else{
+    //     questionList();
+    //   }
+      
+    // });
 
+    //do some code here
+    choicesEl.appendChild(createButton);
+  }
+  
+}
+
+function questionBtn(event) {
+  var questionClick = event.target
+  var grabbedQuestion = questions[currentQuestion];
+  
+  document.addEventListener('click', function(){
+    event.preventDefault();
+    if (questionClick.value !== questions[currentQuestion].answer) {
+      time -= 15;
+      // return ;
+    } 
+    currentQuestion++;
+    if (currentQuestion>=questions.length){
+    //   quizEnds();
+    // }else{
+      
+    }
+  });
+  questionList();
 }
 
 function quizEnds(){
@@ -68,13 +108,16 @@ function quizEnds(){
   highScoreEl.removeAttribute('class')
 }
 
+function highScoreList(){
+
+}
 
 
 
 
 
 
-
-startBtn.onclick = startGame
+choicesEl.onclick = questionBtn;
+startBtn.onclick = startGame;
 
 
